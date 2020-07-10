@@ -1,0 +1,15 @@
+.DS_Store
+build/
+dist/
+npm-debug.log
+tsconfig.json
+.idea/
+node_modules/
+package-lock.json
+doc/
+mock2easy/
+.vscode/
+yarn.lock
+.eslintrc.js
+.prettierrc.js
+postcss.config.js
