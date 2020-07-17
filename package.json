@@ -3,7 +3,9 @@
     "start": "webpack-dev-server --config webpack.dev.js"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.10",
     "babel-loader": "^8.1.0",
+    "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
