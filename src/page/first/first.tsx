@@ -1,6 +1,9 @@
 import * as React from 'react';
 import useBanlan from '../components/useBanlan';
 import './style.scss';
+import Button from '../../components/Button/button';
+import Alert from '../../components/Alert/alert';
+import { ExclamationOutlined } from '@ant-design/icons';
 
 let ar: string;
 
@@ -14,19 +17,52 @@ interface getAge extends getName {
   isVoild: boolean;
 }
 
-const First: React.FC<getName> = props => {
+const First: React.FC<getName> = (props) => {
   const { name, people } = props;
   const message: getAge = {
     age: 12,
     isVoild: true
   };
-  const banlan = useBanlan(12);
-  ar == name;
   return (
     <div className="content">
-      <code>456465</code>
-      {name}:{message.age}:{people}-{ar}
-      <p>{banlan}</p>
+      <Alert title="第一个alert" showIcon alertType="success" />
+      <Alert title="第2个alert" showIcon alertType="danger" />
+      <Alert title="第3个alert" alertType="warning" />
+      <Alert title="第4个alert" showIcon alertType="default" />
+      <Alert title="第5个alert" showIcon alertType="default" showClose description="这是一段描述" />
+      <Alert
+        title="第6个alert"
+        showIcon
+        alertType="success"
+        showClose
+        onClose={() => console.log(13221321)}
+        closeBtn="关闭"
+        description="这是一段描述"
+      />
+      <Alert
+        title="第6个alert"
+        showIcon
+        alertType="danger"
+        showClose
+        closeBtn={<ExclamationOutlined />}
+        description="这是一段描述"
+      />
+      <Alert title="第7个alert" showIcon alertType="warning" description="这是一段描述" />
+      <button>点击</button>
+      <Button>113</Button>
+      <Button btnType="primary" size="lg">
+        primary
+      </Button>
+      <Button btnType="danger" size="sm" onClick={() => alert(123)}>
+        danger
+      </Button>
+      <Button>default</Button>
+      <Button btnType="link" href="https://www.baidu.com">
+        link
+      </Button>
+      <Button btnType="link" disabled href="https://www.baidu.com">
+        link
+      </Button>
     </div>
   );
 };

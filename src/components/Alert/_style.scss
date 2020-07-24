@@ -1,0 +1,78 @@
+.alert {
+  position: relative;
+  padding: 10px 14px;
+  color: #333;
+  font-size: 14px;
+  max-width: 500px;
+  .alert-icon {
+    color: #fff;
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 12px;
+    vertical-align: text-bottom;
+    margin-right: 6px;
+  }
+  .icon-default {
+    background: #1890ff;
+  }
+  .icon-success {
+    background: #52c41a;
+  }
+  .icon-danger {
+    background: #ff4d4f;
+  }
+  .icon-warning {
+    background: #faad14;
+  }
+  .icon-big {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .icon-big-default {
+    @include big-icon(#1890ff, #1890ff, #e6f7ff);
+  }
+  .icon-big-success {
+    @include big-icon(#52c41a, #52c41a, #f6ffed);
+  }
+  .icon-big-danger {
+    @include big-icon(#ff4d4f, #ff4d4f, #fff2f0);
+  }
+  .icon-big-warning {
+    @include big-icon(#faad14, #faad14, #fffbe6);
+  }
+
+  .close-btn {
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    &:focus,
+    &.focus {
+      outline: none;
+    }
+  }
+  .alert-description-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .description {
+    display: block;
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-left: 32px;
+  }
+}
+.alert-default {
+  @include alert-color(#91d5ff);
+}
+.alert-success {
+  @include alert-color(#b7eb8f);
+}
+.alert-danger {
+  @include alert-color(#ffccc7, #fff2f0);
+}
+.alert-warning {
+  @include alert-color(#ffe58f);
+}

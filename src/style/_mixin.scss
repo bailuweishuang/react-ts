@@ -1,0 +1,46 @@
+@mixin button-size($padding-y, $padding-x, $font-size, $border-raduis) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-raduis;
+}
+@mixin button-style(
+  $background,
+  $border,
+  $color,
+  $hover-background: lighten($background, 7.5%),
+  $hover-border: lighten($border, 10%),
+  $hover-color: $color
+) {
+  background: $background;
+  border: 1px solid $border;
+  color: $color;
+  &:hover {
+    background: $hover-background;
+    border: 1px solid $hover-border;
+    color: $hover-color;
+    outline: none;
+  }
+  &:focus,
+  &.focus {
+    background: $hover-background;
+    border: 1px solid $hover-border;
+    color: $hover-color;
+    outline: none;
+  }
+  &:disabled,
+  &.disabled {
+    background: $background;
+    border: 1px solid $border;
+    color: $color;
+  }
+}
+@mixin alert-color($border, $background: lighten($border, 18%)) {
+  border: 1px solid $border;
+  background-color: $background;
+}
+
+@mixin big-icon($color, $border, $background) {
+  color: $color;
+  border: 2px solid $border;
+  background-color: $background;
+}
