@@ -7,6 +7,9 @@ const testProps: AlertProps = {
   className: 'alert',
   alertType: 'default'
 };
+const showProps: AlertProps = {
+  onClose: jest.fn()
+};
 describe('test alert component', () => {
   it('default alert', () => {
     const wrapper = render(<Alert {...testProps} />);

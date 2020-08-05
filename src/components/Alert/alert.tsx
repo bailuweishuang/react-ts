@@ -67,7 +67,7 @@ const Alert: React.FC<AlertProps> = (props) => {
     ) : null;
   };
   return !closing ? (
-    <div data-show={true} className={classes} data-testid='test-alert'>
+    <div data-show={true} className={classes} data-testid="test-alert">
       {showIcon ? IconRender() : null}
       <span
         className={classNames({
@@ -77,13 +77,15 @@ const Alert: React.FC<AlertProps> = (props) => {
         {title}
       </span>
       {closeRender()}
-      <span
-        className={classNames({
-          description: description
-        })}
-      >
-        {description}
-      </span>
+      {description ? (
+        <span
+          className={classNames({
+            description: description
+          })}
+        >
+          {description}
+        </span>
+      ) : null}
     </div>
   ) : null;
 };
