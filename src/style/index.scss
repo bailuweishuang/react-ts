@@ -1,9 +1,19 @@
-@import 'variables';
-@import 'reboot';
-@import 'mixin';
-@import 'animation';
+@import './variables';
+@import './reboot';
+@import './mixin';
+@import './animation';
 @import '../components/Button/style';
 @import '../components/Alert/style';
 @import '../components/Menu/style';
 @import '../components/Tabs/style';
 @import '../components/Icon/style';
+h3 {
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+#story-root {
+  margin-left: 40px;
+  .btn {
+    margin-right: 20px;
+  }
+}

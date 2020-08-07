@@ -71,7 +71,7 @@ const SubMenu: React.FC<subMenu> = (props) => {
     <ul className={classes} {...moverEvent}>
       <div
         className={classNames('submenu-title', {
-          'is-active': content.index === index
+          'is-active': content.index === index || content.index.split('-').includes(index)
         })}
         {...clickEvent}
       >

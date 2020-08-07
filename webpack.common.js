@@ -55,6 +55,10 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
       },
       {
+        test: /\.txt$/i,
+        use: 'raw-loader'
+      },
+      {
         test: /\.svg$/,
         use: ['@svgr/webpack']
       },
@@ -68,6 +72,14 @@ module.exports = {
           publicPath: path.resolve(__dirname, '../build')
         }
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      }
       // // 下面这个配置必须放在最后
       // {
       //   exclude: [/\.(js|mjs|ts|tsx|less|css|jsx)$/, /\.html$/, /\.json$/],

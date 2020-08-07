@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, ButtonHTMLAttributes, ReactNode } from 'react';
 import classNames from 'classnames';
 import { CheckOutlined, InfoOutlined, CloseOutlined, ExclamationOutlined } from '@ant-design/icons';
 export type AlertType = 'success' | 'default' | 'danger' | 'warning';
@@ -11,20 +11,36 @@ export enum IconType {
 }
 
 interface BaseAlertProps {
+  /**样式 */
   className?: string;
+  /**不同类型 */
   alertType?: string;
+  /**警告提示内容 */
   title?: string;
+  /**警告提示的辅助性文字介绍 */
   description?: string;
-  closeBtn?: string | React.ReactNode;
-  icon?: React.ReactNode;
+  /**自定义关闭按钮 */
+  closeBtn?: string | ReactNode;
+  /**自定义图标，showIcon 为 true 时有效 */
+  icon?: ReactNode;
+  /**是否显示辅助图标 */
   showIcon?: boolean;
+  /**是否显显示关闭按钮 */
   showClose?: boolean;
+  /**关闭时触发的回调函数 */
   onClose?: () => void;
 }
-type NativeButtonProps = React.ButtonHTMLAttributes<HTMLElement>;
-export type AlertProps = BaseAlertProps & NativeButtonProps;
-
-const Alert: React.FC<AlertProps> = (props) => {
+type NativeButtonProps = BaseAlertProps & ButtonHTMLAttributes<HTMLElement>;
+export type AlertProps = NativeButtonProps;
+/**
+ * 警告提示，展现需要关注的信息。
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Alert } from 'react-ts'
+ * ~~~
+ */
+export const Alert: FC<AlertProps> = (props) => {
   const [closing, setclosing] = React.useState(false);
   const { className, alertType, title, description, showIcon } = props;
   const classes = classNames('alert', className, {

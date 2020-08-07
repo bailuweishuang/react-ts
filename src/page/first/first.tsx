@@ -33,7 +33,7 @@ const First: React.FC<getName> = (props) => {
   };
   return (
     <div className="content">
-      <Menu defaultIndex={'0'} onSelect={(e) => console.log(e)}>
+      <Menu defaultIndex={'0'} onSelect={(e) => console.log(e)} mode="vertical">
         <MenuItem>111</MenuItem>
         <MenuItem>222</MenuItem>
         <MenuItem>333</MenuItem>

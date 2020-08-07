@@ -31,6 +31,9 @@
       display: flex;
       align-items: center;
     }
+    .is-active {
+      color: $menu-item-active-color !important;
+    }
     .arrow-icon {
       transition: transform 0.25s ease-in-out;
       margin-left: 3px;
@@ -69,7 +72,7 @@
     }
   }
   .submenu.menu-opened {
-   // display: block;
+    // display: block;
   }
 }
 .menu-horizontal {
