@@ -1,17 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, FC } from 'react';
 import classNames from 'classnames';
 import { MenuContent } from './menu';
 import { menuItemProps } from './menu-item';
 import Icon from '../Icon/icon';
 import Transtion from '../Transtion/transtion';
 
-export interface subMenu {
+export interface IsubMenu {
   index?: string;
+  /**子菜单项值 */
   title: string;
   className?: string;
 }
-
-const SubMenu: React.FC<subMenu> = (props) => {
+/**
+ * 子菜单
+ */
+export const SubMenu: FC<IsubMenu> = (props) => {
   const content = useContext(MenuContent);
   const { index, title, className, children } = props;
   const defaultSubMenu = content.defaultSubmenuKey as Array<string>;
@@ -83,5 +86,5 @@ const SubMenu: React.FC<subMenu> = (props) => {
   );
 };
 
-SubMenu.displayName = 'subMenu';
+SubMenu.displayName = 'SubMenu';
 export default SubMenu;

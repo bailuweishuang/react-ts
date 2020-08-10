@@ -1,15 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, FC } from 'react';
 import calssNames from 'classnames';
 import { MenuContent } from './menu';
 
 export interface menuItemProps {
+  /**子菜单样式名称 */
   className?: string;
   index?: string;
+  /**子菜单样式 */
   style?: React.CSSProperties;
+  /**是否禁用 */
   disabled?: boolean;
 }
-
-const menuItem: React.FC<menuItemProps> = (props) => {
+/**
+ * 子菜单
+ */
+export const menuItem: FC<menuItemProps> = (props) => {
   const { className, index, style, children, disabled } = props;
   const content = useContext(MenuContent);
   const classes = calssNames('menu-item', className, {

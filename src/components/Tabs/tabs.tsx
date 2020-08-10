@@ -1,15 +1,20 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, FC } from 'react';
 import classNames from 'classnames';
 import { TabsItemProps } from './tab-item';
 
 type tabsMode = 'line' | 'card';
-type selectCallBack = (selectIndex: number) => void;
+export type selectCallBack = (selectIndex: number) => void;
 
 export interface TabsProps {
+  /**样式名称 */
   className?: string;
+  /**样式 */
   style?: React.CSSProperties;
+  /**初始化选择key */
   defaultIndex?: number;
+  /**点击回调 */
   onSelect?: selectCallBack;
+  /**页签基本样式 */
   mode?: tabsMode;
 }
 
@@ -23,7 +28,7 @@ export const TabsContent = createContext<ITabContent>({
   index: 0
 });
 
-const Tabs: React.FC<TabsProps> = (props) => {
+export const Tabs: FC<TabsProps> = (props) => {
   const { className, style, defaultIndex, onSelect, mode, children } = props;
   const [currenActive, setActive] = useState(defaultIndex);
   const classes = classNames('tabs', className);
@@ -37,7 +42,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
   const childrender = () => {
     return React.Children.map(children, (c, i) => {
       const childCompent = c as React.FunctionComponentElement<TabsItemProps>;
-      if (childCompent.type.displayName === 'tabItem') {
+      if (childCompent.type.displayName === 'TabItem') {
         return React.cloneElement(childCompent, {
           index: i
         });
@@ -50,7 +55,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
   const childContentrender = () => {
     return React.Children.map(children, (c, i) => {
       const childCompent = c as React.FunctionComponentElement<TabsItemProps>;
-      if (childCompent.type.displayName === 'tabItem') {
+      if (childCompent.type.displayName === 'TabItem') {
         const classesN = classNames('children-content', {
           'children-content-active': currenActive === i
         });

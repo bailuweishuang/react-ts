@@ -1,17 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, FC } from 'react';
 import classNames from 'classnames';
 import { TabsContent } from './tabs';
 
 export interface TabsItemProps {
   index?: number;
+  /**样式名称 */
   classname?: string;
+  /**样式 */
   style?: React.CSSProperties;
+  /**是否禁用 */
   disabled?: boolean;
+  /**选项卡头显示文字 */
   title: string;
   children: any;
 }
 
-const TabItem: React.FC<TabsItemProps> = (props) => {
+export const TabItem: FC<TabsItemProps> = (props) => {
   const { index, classname, disabled, style, title } = props;
   const content = useContext(TabsContent);
 
@@ -31,6 +35,6 @@ const TabItem: React.FC<TabsItemProps> = (props) => {
   );
 };
 
-TabItem.displayName = 'tabItem';
+TabItem.displayName = 'TabItem';
 
 export default TabItem;
