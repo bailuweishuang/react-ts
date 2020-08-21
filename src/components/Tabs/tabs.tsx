@@ -27,7 +27,14 @@ export interface ITabContent {
 export const TabsContent = createContext<ITabContent>({
   index: 0
 });
-
+/**
+ * 选项卡切换组件。
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Tabs } from 'react-ts'
+ * ~~~
+ */
 export const Tabs: FC<TabsProps> = (props) => {
   const { className, style, defaultIndex, onSelect, mode, children } = props;
   const [currenActive, setActive] = useState(defaultIndex);

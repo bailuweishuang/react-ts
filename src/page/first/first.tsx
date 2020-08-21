@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import useBanlan from '../components/useBanlan';
 import './style.scss';
 import Button from '../../components/Button/button';
@@ -12,6 +12,7 @@ import TabItem from '../../components/Tabs/tab-item';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../../components/Icon/icon';
+import Input from '../../components/Input/Input';
 library.add(fas);
 let ar: string;
 
@@ -27,13 +28,14 @@ interface getAge extends getName {
 
 const First: React.FC<getName> = (props) => {
   const { name, people } = props;
+  const [value, setValue] = useState('');
   const message: getAge = {
     age: 12,
     isVoild: true
   };
   return (
     <div className="content">
-      <Menu defaultIndex={'0'} onSelect={(e) => console.log(e)} mode="vertical">
+      <Menu defaultIndex={'0'} onSelect={(e) => console.log(e)}>
         <MenuItem>111</MenuItem>
         <MenuItem>222</MenuItem>
         <MenuItem>333</MenuItem>
@@ -49,6 +51,18 @@ const First: React.FC<getName> = (props) => {
           <Alert title="第2个alert" showIcon alertType="danger" />
           <Alert title="第3个alert" alertType="warning" />
           <Alert title="第4个alert" showIcon alertType="default" />
+          <Input
+            icon="search"
+            prepand={<div>https://</div>}
+            append=".com"
+            value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+          />
+          <Input icon="search" disabled />
+          <Input icon="search" sizeT="large" append=".com" />
+          <Input icon="search" sizeT="small" append=".com" />
         </TabItem>
         <TabItem title="sconde">
           <Icon icon="coffee" theme="success" />
@@ -88,6 +102,28 @@ const First: React.FC<getName> = (props) => {
           <Button btnType="link" disabled href="https://www.baidu.com">
             link
           </Button>
+          <div className="mort">
+            <div className="dark">
+              <div className="first"></div>
+              <div className="scond"></div>
+            </div>
+            <div className="dark">
+              <div className="first"></div>
+              <div className="scond"></div>
+            </div>
+            <div className="dark">
+              <div className="first"></div>
+              <div className="scond"></div>
+            </div>
+            <div className="dark">
+              <div className="first"></div>
+              <div className="scond"></div>
+            </div>
+            <div className="dark">
+              <div className="first first-last"></div>
+              <div className="scond last"></div>
+            </div>
+          </div>
         </TabItem>
       </Tabs>
     </div>
