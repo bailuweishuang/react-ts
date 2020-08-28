@@ -15,6 +15,7 @@
     "@types/react-transition-group": "^4.4.0",
     "@types/storybook__addon-info": "^5.2.1",
     "antd": "^4.4.3",
+    "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -10,7 +10,14 @@ type TransitionProps = CSSTransitionProps & {
   /**是否需要包一层 */
   wrapper?: boolean;
 };
-
+/**
+ * 动画。
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Transition } from 'react-ts'
+ * ~~~
+ */
 export const Transition: FC<TransitionProps> = (props) => {
   const { children, classNames, animation, wrapper, ...restProps } = props;
   return (
