@@ -13,10 +13,7 @@ export interface IconProps extends FontAwesomeIconProps {
  * 语义化的矢量图形
  * ### 引用方法
  * ~~~js
- * import { library } from '@fortawesome/fontawesome-svg-core';
- * import { fas } from '@fortawesome/free-solid-svg-icons';
  * import { Icon } from "react-ts";
- * library.add(fas);
  * ~~~
  */
 export const Icon: FC<IconProps> = (props) => {
