@@ -5,7 +5,6 @@
 // import './style/index.scss';
 
 // const ROOT = document.getElementById('app');
-
 // ReactDOM.render(<First />, ROOT);
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
