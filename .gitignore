@@ -12,4 +12,3 @@ yarn.lock
 .eslintrc.js
 .prettierrc.js
 postcss.config.js
-storybook-static/

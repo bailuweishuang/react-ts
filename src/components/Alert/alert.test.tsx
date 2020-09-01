@@ -1,14 +1,11 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Alert, { AlertProps } from './alert';
 import '@testing-library/jest-dom';
 
 const testProps: AlertProps = {
   className: 'alert',
   alertType: 'default'
-};
-const showProps: AlertProps = {
-  onClose: jest.fn()
 };
 describe('test alert component', () => {
   it('default alert', () => {
