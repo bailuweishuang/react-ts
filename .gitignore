@@ -2,7 +2,6 @@
 build/
 dist/
 npm-debug.log
-tsconfig.json
 .idea/
 node_modules/
 package-lock.json
