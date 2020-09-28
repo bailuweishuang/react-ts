@@ -11,7 +11,7 @@ export enum IconType {
 }
 
 interface BaseAlertProps {
-  /**样式 */
+  /**样式名 */
   className?: string;
   /**不同类型 */
   alertType?: string;
