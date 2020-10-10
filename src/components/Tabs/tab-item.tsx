@@ -24,7 +24,8 @@ export const TabItem: FC<TabsItemProps> = (props) => {
     [`title-${content.mode}-active`]: content.index === index
   });
   const handleClick = () => {
-    if (content.onselect && !disabled) {
+    console.log(index);
+    if (content.onselect && !disabled && index !== undefined) {
       content.onselect(index);
     }
   };

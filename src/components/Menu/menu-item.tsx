@@ -16,13 +16,14 @@ export interface menuItemProps {
  */
 export const menuItem: FC<menuItemProps> = (props) => {
   const { className, index, style, children, disabled } = props;
+  console.log(index, 12313);
   const content = useContext(MenuContent);
   const classes = calssNames('menu-item', className, {
     'is-disabled': disabled,
     'is-active': content.index === index
   });
   const handleClick = () => {
-    if (content.onSelect && !disabled) {
+    if (content.onSelect && !disabled && index !== undefined) {
       content.onSelect(index);
     }
   };

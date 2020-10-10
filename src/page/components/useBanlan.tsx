@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useBanlan = (number: number) => {
-  const [name, setName] = useState(null);
+  const [name, setName] = useState<number | null>(null);
   useEffect(() => {
     if (number > 10) setName(number);
   });

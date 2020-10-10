@@ -21,7 +21,7 @@ export interface menuProps {
 }
 
 export interface IMenuContent {
-  index: string;
+  index?: string;
   onSelect?: slelectCallBack;
   mode?: menuMode;
   defaultSubmenuKey?: string[];

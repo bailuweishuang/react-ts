@@ -46,7 +46,7 @@ export const SubMenu: FC<IsubMenu> = (props) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setOpened(!opened);
-    if (content.onSelect) {
+    if (content.onSelect && index !== undefined) {
       content.onSelect(index);
     }
   };
@@ -74,7 +74,9 @@ export const SubMenu: FC<IsubMenu> = (props) => {
     <ul className={classes} {...moverEvent}>
       <div
         className={classNames('submenu-title', {
-          'is-active': content.index === index || content.index.split('-').includes(index)
+          'is-active':
+            content.index === index ||
+            (content.index && index !== undefined && content.index.split('-').includes(index))
         })}
         {...clickEvent}
       >

@@ -65,7 +65,9 @@ export const Alert: FC<AlertProps> = (props) => {
   const handleClose = () => {
     const { onClose } = props;
     setclosing(true);
-    onClose();
+    if (onClose) {
+      onClose();
+    }
   };
 
   const closeRender = () => {

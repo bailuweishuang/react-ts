@@ -77,7 +77,7 @@ export const Upload: FC<IUploadProps> = (props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [uploadFile, setUploadFile] = useState<IUploadFile[]>(defaultFileList || []);
   const handleClick = () => {
-    if (inputRef) {
+    if (inputRef.current) {
       inputRef.current.click();
     }
   };
@@ -137,7 +137,9 @@ export const Upload: FC<IUploadProps> = (props) => {
         formData.append(item, data[item]);
       });
     }
-    formData.append(name, file);
+    if (name) {
+      formData.append(name, file);
+    }
     axios
       .post(action, formData, {
         headers: {
@@ -184,7 +186,7 @@ export const Upload: FC<IUploadProps> = (props) => {
   };
   return (
     <div>
-      <div style={{display: 'inline-block'}} onClick={handleClick}>
+      <div style={{ display: 'inline-block' }} onClick={handleClick}>
         {drag ? <Drag onFile={(file) => uploadhandle(file)}>{children}</Drag> : children}
         <input
           type="file"
